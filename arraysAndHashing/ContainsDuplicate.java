@@ -19,8 +19,17 @@ public class ContainsDuplicate {
 
         return listAndResult;
     }
-    public boolean solution(List<Integer> list) {
-        return true;
+    public boolean solution(List<Integer> nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (Integer i : nums) {
+            if(map.containsKey(i)) {
+                return true;
+//                map.put(i, map.get(i)+1);
+            } else {
+                map.put(i, 1);
+            }
+        }
+        return false;
     }
     public static void main(String[] args) {
         ContainsDuplicate cd = new ContainsDuplicate();
